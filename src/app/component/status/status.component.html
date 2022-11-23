@@ -1,0 +1,34 @@
+<input [(ngModel)]="key" placeholder="Enter EMPLOYE ID" type="text">
+<span (click)="findLeave()">FIND</span>
+
+
+  
+  <table *ngIf="cur_status" class=" mt-5 table table-dark table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          
+          <th>leave applying date </th>
+          <th scope="col">leave starting date</th>
+          <th scope="col">leave ending date</th>
+          <th scope="col">status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let t of details;index as i;" >
+          <th scope="row">1</th>
+          
+          
+          <td>{{t.leave_applying_date}}</td>
+          <td>{{t.leave_starting_date}}</td>
+          <td>{{t.leave_ending_date}}</td>
+          <td>{{t.status}}</td>
+          
+          
+        </tr>
+       
+      </tbody>
+    </table>
+    
+  
+    

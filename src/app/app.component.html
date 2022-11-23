@@ -1,0 +1,35 @@
+
+
+<mat-toolbar style="border-radius: 0px;
+background: #e0e0e0;
+box-shadow:  8px 8px 40px #c7c7c7,
+             -8px -8px 40px #f9f9f9;" >
+  
+
+  <mat-toolbar-row>
+    <span style="color: #257069;">Tracker</span>
+    <span class="example-spacer"></span>
+    <div routerLink="/group-list-view-doc" style="color: #257069; cursor: pointer;" ></div>
+    <button *ngIf="loggedIn" routerLink="employe-crud" mat-menu-item>TAP TO edit/create/delete employe</button>
+    <mat-icon *ngIf="loggedIn" [matMenuTriggerFor]="menu"  matBadge="{{count}}" matBadgeColor="warn">notifications</mat-icon>
+   
+<mat-menu #menu="matMenu">
+  <button routerLink="return-book"  *ngFor="let t of due_books" mat-menu-item>{{t.book.book_name}} on due tap to return  </button>
+  
+</mat-menu>
+    <div *ngIf="!loggedIn" routerLink="login" style=" cursor: pointer; color: #257069;" class="example-icon">Login</div>
+    <div (click)="logout()" *ngIf="loggedIn" style="color: #257069; cursor: pointer; " class="example-icon">Logout</div>
+    
+    
+        
+       
+          <!-- Include text description of the icon's meaning for screen-readers -->
+         
+    
+  </mat-toolbar-row>
+</mat-toolbar>
+  
+
+
+<router-outlet></router-outlet>
+

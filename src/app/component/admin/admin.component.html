@@ -1,0 +1,49 @@
+
+<div class="mt-5">
+  <input [(ngModel)]="key" type="text">
+  <span (click)="search()" style="color: aliceblue; cursor: pointer;" > search </span>
+</div>
+
+<table class=" mt-5 table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">name</th>
+        <th scope="col">employe id</th>
+        <th>leave applying date </th>
+        <th scope="col">leave starting date</th>
+        <th scope="col">leave ending date</th>
+        <th scope="col">action</th>
+        <th scope="col">employee joined date</th>
+        <th scope="col">PDF</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of details;index as i;" >
+        <th scope="row">1</th>
+        <td>{{t.Employe.employe_name}}</td>
+        <td>{{t.Employe.employe_id}}</td>
+        <td>{{t.leave_applying_date}}</td>
+        <td>{{t.leave_starting_date}}</td>
+        <td>{{t.leave_ending_date}}</td>
+        
+        
+        <div *ngIf="t.status == 'pending'" class="btn-group">
+          <button   type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            {{t.status}}
+          </button>
+          <ul class="dropdown-menu">
+            <li style="cursor: pointer;" (click)="changeStatus('Reject',t.id,i)" ><span class="dropdown-item" >Reject</span></li>
+            <li style="cursor: pointer;" (click)="changeStatus('Accept',t.id,i)" ><span class="dropdown-item" >Accept</span></li>
+            
+          </ul>    
+        </div>
+        <td *ngIf="!(t.status=='pending')" >{{t.status}}</td>
+        <td>{{t.Employe.employe_created_date}}</td>
+        <td><a target="_blank" href="http://127.0.0.1:8000/{{t.docfile}}">view pdf</a></td>
+      </tr>
+     
+    </tbody>
+  </table>
+  

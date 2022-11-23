@@ -1,0 +1,34 @@
+
+
+<div class="mt-5" style="margin-top: 20ch; padding-top: 20ch;">
+
+<div  style="margin-top: 20ch;" id="container">
+    <header>Apply for a leave</header>
+    <div>
+       <fieldset>
+          <br/>
+          <input  [(ngModel)]="employe_name"  id="profile-name" placeholder="name" required autofocus>
+          <br/><br/>
+          <input type="email" [(ngModel)]="designation" name="designation" id="designation" placeholder="Designation" required>
+          <br/><br/>
+          <label style="color: aliceblue;" for="">starting date</label>
+          <input type="date" id="" [(ngModel)]="starting_date" placeholder="Date" required>
+          <br>
+            <label style="color: aliceblue;" for="">ending date</label>
+          <input placeholder="Date you joined" [(ngModel)]="ending_date" class="textbox-n" type="date" id="date" required> 
+          <br/><br/>
+          
+          <input type="text" [(ngModel)]="employe_id" name="employe id"  placeholder="employe_id" required>
+          <br/> <br/> <br/>
+          <label for="submit"></label>
+          <input type="submit" (click)="apply()" name="submit" id="submit" value="REGISTER">
+          <input type="file" (change)="fileSelected($event)" >
+       </fieldset>
+       <div *ngIf="showError" class="alert alert-danger" role="alert">
+         {{comment}}
+       </div>
+       <div routerLink="/cheack-status" class="mt-2" style=" cursor: pointer; color: wheat; display: flex; justify-content: center;" >CLICK HERE TO SEE LEAVE STATUS</div>
+    </div>
+    
+ </div>
+</div>

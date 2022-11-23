@@ -1,0 +1,69 @@
+<h3>EMPLOYEE REGISTRATION FORM</h3>
+
+ 
+<table align="center" cellpadding = "10">
+ 
+<!----- First Name ---------------------------------------------------------->
+<tr>
+<td>FIRST NAME</td>
+<td><input style="color: black;" type="text" [(ngModel)]="employe_name" name="First_Name" maxlength="30"/>
+(max 30 characters a-z and A-Z)
+</td>
+</tr>
+ 
+<!----- Last Name ---------------------------------------------------------->
+<tr>
+<td>LAST NAME</td>
+<td><input style="color: black;" type="text" [(ngModel)]="last_name" name="Last_Name" maxlength="30"/>
+(max 30 characters a-z and A-Z)
+</td>
+</tr>
+ 
+<!----- Date Of Birth -------------------------------------------------------->
+
+
+ 
+<!----- Email Id ---------------------------------------------------------->
+<tr>
+<td>EMAIL ID</td>
+<td><input type="text" style="color: black;"  name="Email_Id" [(ngModel)]="email" maxlength="100" /></td>
+</tr>
+ 
+<!----- Mobile Number ---------------------------------------------------------->
+<tr>
+<td>MOBILE NUMBER</td>
+<td>
+<input type="text" style="color: black;" [(ngModel)]="mobile_number" name="Mobile_Number" maxlength="10" />
+(10 digit number)
+</td>
+</tr>
+ 
+
+ 
+
+<tr>
+    <td>DESIGNATION</td>
+    <td><input type="text" [(ngModel)]="designation" name="Email_Id" maxlength="100" /></td>
+    </tr>
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+ 
+<!----- Submit and Reset ------------------------------------------------->
+<tr>
+<td colspan="2" align="center">
+<input (click)="createEmploye()" type="submit" value="Submit">
+<div *ngIf="showError" class="alert alert-danger" role="alert">
+    {{comment}}
+  </div>
+</td>
+</tr>
+</table>
+ 
